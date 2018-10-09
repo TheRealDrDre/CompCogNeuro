@@ -3,6 +3,6 @@
 ## Core Concepts in Computational Modeling of Cognitive and Neural Processes
 
 This is a repository that contains live code examples for the PSYCH509 class.
+To use the repository code, you might either download it or open any notebook on your favorite browser using Binder by clicking on the button below.
 
-
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/TheRealDrDre/PSYCH509/bc831b27cabb8f0cd55590221b5d765a626994b5)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/TheRealDrDre/PSYCH509/ec9be3b)
