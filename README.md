@@ -1,8 +1,7 @@
-# PSYCH509
+# Computational Cognitive Neuroscience Materials
 
-## Core Concepts in Computational Modeling of Cognitive and Neural Processes
+This repository contains some basic notebooks to introduce the fundamentals of model-based cognitive neuroscience. Specifically, it contains examples and code for Reinforcement Learning and Artificial Neural Networks. 
 
-This is a repository that contains live code examples for the PSYCH509 class.
 To use the repository code, you might either download it or open any notebook on your favorite browser using Binder by clicking on the button below.
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/TheRealDrDre/PSYCH509/master?urlpath=lab)
