@@ -4,4 +4,4 @@ This repository contains some basic notebooks to introduce the fundamentals of m
 
 To use the repository code, you might either download it or open any notebook on your favorite browser using Binder by clicking on the button below.
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/TheRealDrDre/PSYCH509/master?urlpath=lab)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/TheRealDrDre/CompCogNeuro/master?urlpath=lab)
