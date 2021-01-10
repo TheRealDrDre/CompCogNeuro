@@ -56,3 +56,55 @@ class QAgent():
                 maxq = max([self.getQ((i, j), a) for a in self.actions])
                 v[i,j] =maxq
         return v
+
+    
+def run_trials_for_altair(environment, agent, n, collect=True):
+    """Runs N trials"""
+    state_action = {} 
+    # init all state_actions
+    for i in range(4):
+        for j in range(4):
+            for direction in ['down', 'right', 'up', 'left']:
+                state_action[str(((i, j), direction))] = [0] 
+
+    for j in range(n):
+        run_trial(environment, agent)
+        all_keys = set(state_action.keys())
+        # keys with new values
+        for key, val in agent.Q.items():
+            state_action[str(key)].append(val)
+            all_keys.remove(str(key))
+        # keys without new values
+        for key in all_keys:
+            state_action[str(key)].append(state_action[str(key)][-1])
+        environment.state = Maze.INITIAL_STATE
+        
+    import pandas as pd
+    location = []
+    run = []
+    q_value = []
+    for loc in state_action.keys():
+        for i in range(len(state_action[loc])):
+            location.append(loc)
+            run.append(i)
+            q_value.append(state_action[loc][i])
+    df = pd.DataFrame({"location":location, "run":run, "q_value":q_value})
+    return df    
+
+m = Maze()
+a = Agent()
+df = run_trials_for_altair(m, a, 100)
+
+import altair as alt
+
+slider = alt.binding_range(min=1, max=100, step=1)
+select_run = alt.selection_single(name="iteration", fields=['run'], bind=slider)
+alt.data_transformers.enable('default', max_rows=None)
+alt.Chart(df).mark_bar().encode(
+    x='location:N',
+    y=alt.Y('q_value:Q', scale=alt.Scale(domain=(0, 11))),
+).add_selection(
+    select_run
+).transform_filter(
+    select_run
+)
