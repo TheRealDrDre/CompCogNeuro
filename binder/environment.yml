@@ -1,12 +1,11 @@
-name: example-environment
+name: compcogneuro-environment
 channels:
   - conda-forge
 dependencies:
   - python
   - numpy
   - scipy
+  - pandas
+  - matplotlib
   - pip:
-    - matplotlib
-    - altair
-    - vega
     - pyactup
