@@ -7,5 +7,6 @@ dependencies:
   - scipy
   - pandas
   - matplotlib
+  - pip
   - pip:
     - pyactup
